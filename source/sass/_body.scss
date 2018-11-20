@@ -1,0 +1,93 @@
+body {
+	font-family: $fontBase;
+	color: #333;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	* {
+		outline: none;
+	}
+
+	.pc{
+		@include SP{
+			display: none!important;
+		}
+	}
+
+	.sp{
+		@include PC{
+			display: none!important;
+		}
+	}
+	.tb{
+		@include CUSTOM(1024px){
+			display: none!important;
+		}
+	}
+	.tb-only{
+		@include PC{
+			display: none!important;
+		}
+		@include CUSTOM(1024px){
+			display: block!important;
+		}
+		@include SP{
+			display: none!important;
+		}
+	}
+
+	button {
+		border: none;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.container{
+		@include PC{
+			max-width: 1100px;
+			margin: 0 auto;
+		}
+		@include SP{
+			overflow: hidden;
+		}
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
+	.red {
+		color: #7c473b;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	center {
+		text-align: center;
+	}
+
+
+	.opacity-hover{
+		transition: opacity .4s ease;
+		&:hover{
+			@include PC{
+				opacity: 0.7!important;
+			}
+		}
+	}
+
+	.container{
+		@include PC{
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		@include CUSTOM(1100px){
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+	}
+}

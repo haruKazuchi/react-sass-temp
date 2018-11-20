@@ -1,0 +1,39 @@
+#footer{
+	display: block;
+	background-color: #000;
+	.nav{
+		@include PC{
+			max-width: 1100px;
+			margin: 0 auto;
+			height: 70px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		@include CUSTOM(1100px){
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.nav-menus{
+			color: #fff;
+			@include PC{
+				font-size: 14px;
+			}
+			& > ul{
+				display: flex;
+				& > li{
+					&:first-child{
+						margin-left: 0;
+					}
+					margin-left: 10px;
+				}
+			}
+		}
+		.nav-copy{
+			color: #ccc;
+			@include PC{
+				font-size: 14px;
+			}
+		}
+	}
+}
